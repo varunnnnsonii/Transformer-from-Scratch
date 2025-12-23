@@ -5,7 +5,7 @@ import tiktoken
 import torch
 from torch import nn
 
-# Instead of redefining them, import your custom implementations
+
 from functions.nn_Linear.linear import MyLinear
 from functions.nn_Dropout.dropout import MyDropout
 from functions.nn_ReLU.relu import MyReLU
@@ -50,15 +50,6 @@ split_idx = int(len(tokenized_text) * 0.9)
 train_data = tokenized_text[:split_idx]
 val_data = tokenized_text[split_idx:]
 
-# ==========================
-# Custom Embedding
-# ==========================
-# class MyEmbedding(nn.Module):
-#     def __init__(self, num_embeddings, embedding_dim):
-#         super().__init__()
-#         self.weight = nn.Parameter(torch.randn(num_embeddings, embedding_dim))
-#     def forward(self, x):
-#         return self.weight[x]
 
 # ==========================
 # Feed Forward
