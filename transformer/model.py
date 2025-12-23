@@ -42,6 +42,7 @@ train_data = tokenized_text[:split_idx]
 val_data = tokenized_text[split_idx:]
 
 
+
 # Define Feed Forward Network
 class FeedForward(nn.Module):
     def __init__(self):
