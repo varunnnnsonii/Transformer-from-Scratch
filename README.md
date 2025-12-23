@@ -10,7 +10,7 @@ Designed as a **learning project** to understand how a Transformer language mode
 
 ## 🚀 Project Overview
 
-This repository contains a complete implementation of a Transformer‑style **autoregressive language model** built manually in PyTorch, inspired by foundational concepts from the original Transformer architecture (“Attention Is All You Need”) and simplified implementations (e.g., nanoGPT examples). :contentReference[oaicite:0]{index=0}
+This repository contains a complete implementation of a Transformer‑style **autoregressive language model** built manually in PyTorch, inspired by foundational concepts from the original Transformer architecture (“Attention Is All You Need”) and simplified implementations (e.g., nanoGPT examples). 
 
 The model is trained on a plain‑text dataset (e.g., a sales textbook) and learns to predict the next token given a context window (`context_length`). Once trained, it can generate coherent text continuations autoregressively.
 
@@ -20,15 +20,33 @@ The model is trained on a plain‑text dataset (e.g., a sales textbook) and lear
 
 ```
 
-Transformer‑from‑Scratch/
+Transformer-from-Scratch/
+├── model.py                # Main file of the project
+├── README.md               # Project overview
+├── THEORY.md               # Mathematical + conceptual theory
+├── .gitignore
+│
 ├── data/
-│   └── sales_textbook.txt    # Training data
-├── transformer.py            # Core model definitions
-├── train.py                  # Training & evaluation loop
-├── generate.py               # Text generation script
-├── requirements.txt          # Project dependencies
-├── README.md                 # This document
-└── .gitignore
+│   ├── input.txt
+│   └── sales_textbook.txt
+│
+├── functions/              # Custom neural-network primitives
+│   ├── F_softmax/
+│   │   └── softmax.py
+│   ├── nn_Linear/
+│   │   └── linear.py
+│   ├── nn_Embedding/
+│   │   └── embedding.py
+│   ├── nn_LayerNorm/
+│   │   └── layernorm.py
+│   ├── nn_Dropout/
+│   │   └── dropout.py
+│   └── nn_ReLU/
+│       └── relu.py
+│
+└── transformer/
+    └── model.py            # Transformer architecture
+
 
 ````
 
@@ -91,7 +109,7 @@ If not present, the training script will automatically download it from HuggingF
 To train the model, run:
 
 ```bash
-python train.py
+python model.py
 ```
 
 This script will:
@@ -102,17 +120,6 @@ This script will:
 ✔ Print train/validation loss periodically
 ✔ Save model checkpoint (`model‑ckpt.pt`)
 
----
-
-### 🌀 Generate Text
-
-After training, you can generate text:
-
-```bash
-python generate.py --start "The salesperson"
-```
-
-This generates continuation tokens from a given prompt using the trained model.
 
 ---
 
