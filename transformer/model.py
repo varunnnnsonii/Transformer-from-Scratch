@@ -22,7 +22,7 @@ TORCH_SEED = 1337
 torch.manual_seed(TORCH_SEED)
 
 # Load training data
-if not os.path.exists('data/input.txt'):
+if not os.path.exists('data/sales_textbook.txt'):
     url = 'https://huggingface.co/datasets/goendalf666/sales-textbook_for_convincing_and_selling/raw/main/sales_textbook.txt'
     with open('data/sales_textbook.txt', 'w') as f:
         f.write(requests.get(url).text)
