@@ -1,0 +1,21 @@
+# Ignore data directory
+/data/
+
+# Ignore PyTorch model files
+*.pt
+*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
