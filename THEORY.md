@@ -345,6 +345,7 @@ Where `N = vocab_size`, `ε ≈ 0.1`.
 ## 20. Evaluation Metrics
 
 * **Perplexity:** Standard metric for language models.
+
 $$
 Perplexity = exp(Loss)
 $$
